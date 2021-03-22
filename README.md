@@ -43,13 +43,14 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+    closure is when something from the inner scope is reaching outwards beyond its own scope  to obtain information.  When a nested function is invoked it is using closure.
 2. Study the following code, then answer the questions below.
 
 ```js
 function personalDice(name){
   return function(){
       // generate random number between 1 and 6
-    const newRoll = Math.floor(Math.random() * 6);
+    const newRoll = Math.floor(Math.random() * 7);
     console.log(`${name} rolled a ${newRoll}`)
   }
 }
@@ -64,8 +65,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+    closure is being used on lines 63 and 64 because they are invoking the inner function.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+    The phrase is always the same and the odds stay the same, but the roll resets every time.  The phrase could  maybe change to indicate how many times "dan" has rolled?
 c. What is the lexical scope of `newRoll`? 
+    The lexical scope is the scope of its parent, "personalDice".
 
 
 ### Task 3 - Stretch Goals
